@@ -1,1 +1,5 @@
-# boto3AssignmentSunil
+# boto3AssignmentSunil\
+
+**ALL THE STEPS ARE SHOWN ON THE INDIVIDUAL CODE FILE**
+
+
