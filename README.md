@@ -3,12 +3,12 @@
 **ALL THE IMPORTANT STEPS ARE SHOWN ON THE INDIVIDUAL CODE FILE**
 **BELOW ARE ONLY THE SKELETAL STEPS88**
 
-Step 1: Set Up MongoDB
+# Step 1: Set Up MongoDB
 For this step, you will typically connect to a MongoDB instance, whether it's running on an EC2 instance or using an external service like MongoDB Atlas. You'll need to install the necessary MongoDB client libraries if you haven't already.
 
 python
 Copy code
-# Connect to MongoDB instance
+Connect to MongoDB instance
 import pymongo
 
 def connect_to_mongodb():
@@ -17,10 +17,15 @@ def connect_to_mongodb():
     # Add authentication if required
     db.authenticate('your_username', 'your_password')
     return db
-Step 2: Develop and Test MERN Application Locally
+    
+# Step 2: Develop and Test MERN Application Locally
 Develop and test your MERN application locally using your preferred development environment and tools.
+Launch EC2 instances for your Node.js server and React.js client using Boto3.
+Install Node.js and other required dependencies on the server instance using user data or scripts.
+Deploy your MERN application to the EC2 instances programmatically.
+Ensure the instances register with the Elastic Load Balancer (ELB).
 
-Step 3: Configure AWS EC2 Instances
+# Step 3: Configure AWS EC2 Instances
 Here's how you can create EC2 instances using Boto3:
 
 python
@@ -42,7 +47,11 @@ def create_ec2_instances():
     waiter.wait(InstanceIds=[instance_id])
 
     
-Step 4: Elastic Load Balancer (ELB)
+# Step 4: Elastic Load Balancer (ELB)
+Elastic Load Balancer (ELB):
+Use Boto3 to create a Classic Load Balancer or an Application Load Balancer.
+Configure listeners and target groups programmatically.
+
 Create a Classic Load Balancer or an Application Load Balancer using Boto3:
 
 python
@@ -63,7 +72,11 @@ def configure_elb():
     )
 
     
-Step 5: Auto Scaling Group (ASG)
+# Step 5: Auto Scaling Group (ASG)
+Auto Scaling Group (ASG):
+Create an Auto Scaling Group (ASG) to manage EC2 instances for your application using Boto3.
+Configure the launch configuration with your AMI (Amazon Machine Image).
+
 Create an Auto Scaling Group using Boto3:
 
 python
@@ -86,7 +99,11 @@ def create_auto_scaling_group():
     )
 
     
-Step 6: CloudWatch Alarms
+# Step 6: CloudWatch Alarms
+CloudWatch Alarms:
+Set up CloudWatch Alarms to monitor key metrics like CPU utilization programmatically using Boto3.
+Configure actions to trigger based on alarm states.
+
 Set up CloudWatch Alarms to monitor key metrics like CPU utilization using Boto3. For example, to create an alarm for CPU utilization exceeding a threshold:
 
 python
@@ -114,7 +131,11 @@ def set_up_cloudwatch_alarms():
     )
 
     
-Step 7: Lambda Functions
+# Step 7: Lambda Functions
+Lambda Functions:
+Create Lambda functions for specific tasks using Boto3, such as automatic backup of MongoDB.
+Set up triggers for Lambda functions, such as CloudWatch Events.
+
 Create Lambda functions for specific tasks using Boto3. For example, to create a Lambda function:
 
 python
@@ -133,7 +154,12 @@ def create_lambda_function():
     )
 
     
-Step 8: Simple Notification Service (SNS)
+# Step 8: Simple Notification Service (SNS)
+Simple Notification Service (SNS):
+Create an SNS topic for sending notifications using Boto3.
+Subscribe relevant services (e.g., email, SMS) to the SNS topic programmatically.
+Configure CloudWatch Alarms to send notifications through SNS using Boto3.
+
 Create an SNS topic for sending notifications using Boto3:
 
 python
@@ -142,9 +168,15 @@ def configure_sns():
     response = sns_client.create_topic(Name='your_sns_topic_name')
 
     
-Step 9: Monitor and Scale
+# Step 9: Monitor and Scale
+Monitor and Scale:
+Monitor your application's performance through CloudWatch using Boto3.
+Use ASG to automatically scale based on defined policies programmatically.
 Monitor application performance through CloudWatch and use ASG to automatically scale based on defined policies.
 
 
-Step 10: Test and Troubleshoot
+# Step 10: Test and Troubleshoot
+Test and Troubleshoot:
+Test your deployed application programmatically.
+Monitor logs, metrics, and troubleshoot any issues using Boto3.
 Test your deployed application programmatically and monitor logs, metrics, and troubleshoot any issues.
