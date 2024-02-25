@@ -1,7 +1,8 @@
 # boto3AssignmentSunil\
 
 **ALL THE IMPORTANT STEPS ARE SHOWN ON THE INDIVIDUAL CODE FILE**
-**BELOW ARE ONLY THE SKELETAL STEPS88**
+
+**BELOW ARE ONLY THE SKELETAL STEPS**
 
 # Step 1: Set Up MongoDB
 For this step, you will typically connect to a MongoDB instance, whether it's running on an EC2 instance or using an external service like MongoDB Atlas. You'll need to install the necessary MongoDB client libraries if you haven't already.
